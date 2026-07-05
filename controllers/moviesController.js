@@ -1,6 +1,8 @@
 //collegamento al database dei film
 const db = require('../database/db_movies');
 
+
+
 //funzione index per ottenere la lista dei film
 function index(req, res) {
     const query = 'SELECT * FROM movies';

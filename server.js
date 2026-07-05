@@ -5,6 +5,9 @@ const PORT = 3000;
 const moviesRouter = require('./routers/movies');
 const reviewsRouter = require('./routers/reviews');
 
+//inserire le immagini statiche nella cartella public
+app.use(express.static('public'));
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
