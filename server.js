@@ -5,6 +5,10 @@ const PORT = 3000;
 const moviesRouter = require('./routers/movies');
 const reviewsRouter = require('./routers/reviews');
 
+//aggiungo il middleware per la gestione degli errori
+const serverError = require('./middlewares/serverError');
+const notFound = require('./middlewares/notFound');
+
 //inserire le immagini statiche nella cartella public
 app.use(express.static('public'));
 
@@ -26,6 +30,7 @@ app.use('/reviews', reviewsRouter);
 
 
 /*app.get('/', (req, res) => {
+
     res.send('Benvenuto nella mia applicazione Express!');
 });
 //creo la rotta show per avere il dettaglio di un film
@@ -33,3 +38,5 @@ app.get('/movies/:id', (req, res) => {
     const movieId = req.params.id;
     res.send(`Dettaglio del film con id: ${movieId}`);
 });*/
+app.use(serverError);
+app.use(notFound);
