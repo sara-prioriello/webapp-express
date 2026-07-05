@@ -3,6 +3,7 @@ const app = express();
 const PORT = 3000;
 //importiamo il router dei film
 const moviesRouter = require('./routers/movies');
+const reviewsRouter = require('./routers/reviews');
 
 app.use(express.json());
 
@@ -16,6 +17,7 @@ app.listen(PORT, () => {
 
 
 app.use('/movies', moviesRouter);
+app.use('/reviews', reviewsRouter);
 //creo la rotta index
 
 
