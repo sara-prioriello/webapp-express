@@ -7,8 +7,11 @@ const reviewController = require('../controllers/reviewControllers');
 //creiamo una route per la lista delle recensioni
 router.get('/', reviewController.index);
 
-//la rotta show per avere il dettaglio di una recensione 
-router.get('/:id', reviewController.show);
+//la rotta show per avere il dettaglio di un film 
+router.get('/movies/:id', reviewController.show);
+
+//la rotta per inserire una nuova recensione
+router.post('/:id', reviewController.storeReview);
 /*
 router.get('/', (req, res) => {
     res.send('Lista delle recensioni');
