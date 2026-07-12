@@ -12,6 +12,7 @@
     "dev": "node --env-file=.env --watch server.js"
   },
   "dependencies": {
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "init": "^0.1.2",
     "mysql2": "^3.22.5"

@@ -4,6 +4,13 @@ const PORT = 3000;
 //importiamo il router dei film
 const moviesRouter = require('./routers/movies');
 const reviewsRouter = require('./routers/reviews');
+const cors = require("cors");
+
+//aggiungo la middlexare per il cors
+
+app.use(cors({
+    origin: 'http://localhost:5174'
+}));
 
 //aggiungo il middleware per la gestione degli errori
 const serverError = require('./middlewares/serverError');
